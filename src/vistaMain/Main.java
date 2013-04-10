@@ -38,7 +38,7 @@ public class Main extends javax.swing.JFrame{
     
     
     private void configurarVentana(){
-        setTitle("Gestion Cooperativa TECNOMATICA");
+        setTitle("Gestion Cooperativa TECNOMATICA limitada");
         
         setIconImage(new ImageIcon("src/images/iconTecnomatica.png").getImage());
         setSize(500, 500);

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-feb-2013 21:36:03 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="dominio.OrdenDia" table="orden_dia" catalog="cooperativa">
+        <id name="idOd" type="java.lang.Integer">
+            <column name="ID_OD" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="asamblea" class="dominio.Asamblea" fetch="select">
+            <column name="ID_ASAMBLEA" />
+        </many-to-one>
+        <property name="tema" type="string">
+            <column name="TEMA" length="100" />
+        </property>
+        <property name="conclusionTema" type="string">
+            <column name="CONCLUSION_TEMA" length="150" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="build">
+	<path id="build.classpath">
+		<pathelement location="classes"/>
+	</path>
+	<target name="init">
+		<mkdir dir="classes"/>
+	</target>
+	<target name="clean">
+		<delete dir="classes"/>
+	</target>
+	<target depends="init" name="build">
+		<javac srcdir="." destdir="classes" source="1.5" target="1.5" fork="yes">
+			<classpath refid="build.classpath"/>
+			<include name="REGISTRO_DE_ASOCIADO/Dominio/Asociado.java"/>
+			<include name="REGISTRO_DE_ASOCIADO/Dominio/Persona.java"/>
+			<include name="REGISTRO_DE_ASOCIADO/Dao/Asociado_Dao.java"/>
+			<include name="REGISTRO_DE_ASOCIADO/Asociado_DaoImpl.java"/>
+			<include name="REGISTRO_DE_ASOCIADO/Conexion.java"/>
+		</javac>
+	</target>
+</project>

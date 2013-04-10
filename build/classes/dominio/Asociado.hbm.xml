@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-feb-2013 21:36:03 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="cooperativa" name="dominio.Asociado" table="asociados">
+    <id name="idAsociado" type="java.lang.Integer">
+      <column name="ID_ASOCIADO"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="dominio.Categoria" fetch="select" name="categoria">
+      <column name="ID_CATEGORIA"/>
+    </many-to-one>
+    <property name="nombreAsociado" type="string">
+      <column length="50" name="NOMBRE_ASOCIADO"/>
+    </property>
+    <property name="apellidoAsociado" type="string">
+      <column length="50" name="APELLIDO_ASOCIADO"/>
+    </property>
+    <property name="dni" type="int">
+      <column name="DNI" not-null="true"/>
+    </property>
+    <property name="cuil" type="long">
+      <column name="CUIL" not-null="true"/>
+    </property>
+    <property name="responsabilidad" type="string">
+      <column length="30" name="RESPONSABILIDAD"/>
+    </property>
+    <property name="nacionalidad" type="string">
+      <column length="30" name="NACIONALIDAD"/>
+    </property>
+    <property name="estadoCivil" type="string">
+      <column length="10" name="ESTADO_CIVIL"/>
+    </property>
+    <property name="calle" type="string">
+      <column length="100" name="CALLE"/>
+    </property>
+    <property name="barrio" type="string">
+      <column length="100" name="BARRIO"/>
+    </property>
+    <property name="ciudad" type="string">
+      <column length="60" name="CIUDAD"/>
+    </property>
+    <property name="provincia" type="string">
+      <column length="60" name="PROVINCIA"/>
+    </property>
+    <property name="telefono" type="java.lang.Integer">
+      <column name="TELEFONO"/>
+    </property>
+    <property name="celular" type="java.lang.Integer">
+      <column name="CELULAR"/>
+    </property>
+    <property name="fax" type="java.lang.Integer">
+      <column name="FAX"/>
+    </property>
+    <property name="email" type="string">
+      <column length="50" name="EMAIL"/>
+    </property>
+    <property name="sexo" type="string">
+      <column length="15" name="SEXO"/>
+    </property>
+    <property name="fechaNacimiento" type="date">
+      <column length="10" name="FECHA_NACIMIENTO"/>
+    </property>
+    <property name="cantidadHijo" type="java.lang.Integer">
+      <column name="CANTIDAD_HIJO"/>
+    </property>
+    <property name="numeroActaAsamblea" type="java.lang.Integer">
+      <column name="NUMERO_ACTA_ASAMBLEA"/>
+    </property>
+    <property name="nroFolio" type="java.lang.Integer">
+      <column name="NRO_FOLIO"/>
+    </property>
+    <property name="fechaIngreso" type="date">
+      <column length="10" name="FECHA_INGRESO"/>
+    </property>
+    <property name="fechaEgreso" type="date">
+      <column length="10" name="FECHA_EGRESO"/>
+    </property>
+    <property name="causaEgreso" type="string">
+      <column length="200" name="CAUSA_EGRESO"/>
+    </property>
+    <property name="cuotasSuscriptas" type="java.lang.Integer">
+      <column name="CUOTAS_SUSCRIPTAS"/>
+    </property>
+    <property name="cuotasIntegradas" type="java.lang.Integer">
+      <column name="CUOTAS_INTEGRADAS"/>
+    </property>
+    <set inverse="true" name="asistenciaAsambleas">
+      <key>
+        <column name="ID_ASOCIADO"/>
+      </key>
+      <one-to-many class="dominio.AsistenciaAsamblea"/>
+    </set>
+  </class>
+</hibernate-mapping>

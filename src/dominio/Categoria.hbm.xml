@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-feb-2013 21:36:03 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="cooperativa" name="dominio.Categoria" table="categoria">
+    <id name="idCategoria" type="java.lang.Integer">
+      <column name="ID_CATEGORIA"/>
+      <generator class="identity"/>
+    </id>
+    <property name="nombreCategoria" type="string">
+      <column length="2" name="NOMBRE_CATEGORIA"/>
+    </property>
+    <property name="descripcionCat" type="string">
+      <column length="100" name="DESCRIPCION_CAT"/>
+    </property>
+    <set inverse="true" name="asociadoses">
+      <key>
+        <column name="ID_CATEGORIA"/>
+      </key>
+      <one-to-many class="dominio.Asociado"/>
+    </set>
+  </class>
+</hibernate-mapping>

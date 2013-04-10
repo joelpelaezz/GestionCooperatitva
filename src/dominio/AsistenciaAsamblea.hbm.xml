@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-feb-2013 21:36:03 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="cooperativa" name="dominio.AsistenciaAsamblea" table="asistencia_asamblea">
+    <id name="idAsistenciaA" type="java.lang.Integer">
+      <column name="ID_ASISTENCIA_A"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="dominio.Asociado" fetch="select" name="asociados">
+      <column name="ID_ASOCIADO"/>
+    </many-to-one>
+    <many-to-one class="dominio.Asamblea" fetch="select" name="asamblea">
+      <column name="ID_ASAMBLEA"/>
+    </many-to-one>
+    <property name="horaLlegada" type="time">
+      <column length="8" name="HORA_LLEGADA"/>
+    </property>
+    <property name="horaSalida" type="time">
+      <column length="8" name="HORA_SALIDA"/>
+    </property>
+  </class>
+</hibernate-mapping>
